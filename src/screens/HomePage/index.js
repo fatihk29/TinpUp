@@ -128,6 +128,7 @@ export default function Home() {
       </TouchableOpacity>
     </View>
   );
+
   return (
     <View style={{flex: 1}}>
       <PlatformSpecificStatusBar />
@@ -148,12 +149,12 @@ export default function Home() {
         snapPoint={500}
         HeaderComponent={
           <View>
-            <Text>Header</Text>
+            <Text style={{marginLeft: 5, fontSize: 20}}>Header</Text>
           </View>
         }
         withHandle={false}>
         <View>
-          <Text>{selectedData}</Text>
+          <Text style={{marginLeft: 5, fontSize: 16}}>{selectedData}</Text>
         </View>
       </Modalize>
       <View style={{flex: 1}}>
