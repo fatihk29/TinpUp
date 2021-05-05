@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import {Text, View, TouchableOpacity, FlatList} from 'react-native';
 import FA5Icon from 'react-native-vector-icons/FontAwesome5';
 import PlatformSpecificStatusBar from '../../components/StatusBar';
@@ -99,10 +99,10 @@ const FILTERLIST = [
 
 export default function Home() {
   const modalizeRef = useRef(null);
+  const [selectedData, setSelectedData] = useState();
 
   const onOpen = () => {
     modalizeRef.current?.open();
-    console.log('s');
   };
 
   const renderFilterList = ({item}) => (
@@ -115,7 +115,12 @@ export default function Home() {
 
   const renderItem = ({item}) => (
     <View style={styles.itemContainer}>
-      <TouchableOpacity onPress={onOpen} style={styles.itemSubContainer}>
+      <TouchableOpacity
+        onPress={() => {
+          setSelectedData(item.id);
+          return onOpen(item);
+        }}
+        style={styles.itemSubContainer}>
         <Text style={styles.title}>{item.title}</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.iconContainer}>
@@ -148,7 +153,7 @@ export default function Home() {
         }
         withHandle={false}>
         <View>
-          <Text>ss</Text>
+          <Text>{selectedData}</Text>
         </View>
       </Modalize>
       <View style={{flex: 1}}>
