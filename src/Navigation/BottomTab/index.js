@@ -7,11 +7,13 @@ import IIcon from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 import HomePage from '../../screens/HomePage';
 import Customers from '../../screens/Customers';
+import MyProfile from '../../screens/MyProfile';
+import Expand from '../../screens/Expand';
 
-function About({navigation}) {
+function Map({navigation}) {
   return (
     <View style={styles.about}>
-      <Text style={styles.text}>Customer</Text>
+      <Text style={styles.text}>Under Construction</Text>
       <Button title="Go back" onPress={() => navigation.goBack()} />
     </View>
   );
@@ -48,7 +50,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="+"
-        component={About}
+        component={Expand}
         options={{
           tabBarLabel: 'Expand',
           tabBarIcon: ({color, size}) => (
@@ -58,7 +60,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Map"
-        component={About}
+        component={Map}
         options={{
           tabBarLabel: 'Map',
           tabBarIcon: ({color, size}) => (
@@ -68,7 +70,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Customer"
-        component={About}
+        component={MyProfile}
         options={{
           tabBarLabel: 'Me',
           tabBarIcon: ({color, size}) => (

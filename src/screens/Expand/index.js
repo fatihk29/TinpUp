@@ -1,19 +1,25 @@
 import React from 'react';
-import {View, TouchableOpacity} from 'react-native';
-import IIcon from 'react-native-vector-icons/Ionicons';
+import {Text, View, TouchableOpacity} from 'react-native';
+import FA5Icon from 'react-native-vector-icons/FontAwesome5';
 import PlatformSpecificStatusBar from '../../components/StatusBar';
 import Header from '../../components/Header';
 import styles from './styles';
 
-export default function Customers() {
+export default function Home() {
   return (
     <View>
       <PlatformSpecificStatusBar />
-      <Header title="Customers" />
+
+      <Header title="Home" />
       <View style={styles.subContainer}>
         <TouchableOpacity>
           <View style={styles.iconContainer}>
-            <IIcon name="people" size={25} color="black" style={styles.icon} />
+            <FA5Icon
+              name="user-plus"
+              size={20}
+              color="black"
+              style={styles.icon}
+            />
           </View>
         </TouchableOpacity>
       </View>

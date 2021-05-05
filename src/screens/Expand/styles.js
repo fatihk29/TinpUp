@@ -30,23 +30,6 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontWeight: '800',
   },
-  item: {
-    backgroundColor: '#f9c2ff',
-    padding: 10,
-    marginVertical: 8,
-    marginHorizontal: 16,
-    borderRadius: 10,
-  },
-  title: {
-    fontSize: 16,
-  },
-  renderListStyle: {
-    padding: 1,
-    marginVertical: 8,
-    marginHorizontal: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: 'green',
-  },
 });
 
 export default styles;
