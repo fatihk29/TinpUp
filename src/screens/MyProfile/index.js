@@ -9,20 +9,12 @@ export default function MyProfile() {
   return (
     <View>
       <PlatformSpecificStatusBar />
-
-      <Header title="Me" />
-      <View style={styles.subContainer}>
-        <TouchableOpacity>
-          <View style={styles.iconContainer}>
-            <IIcon
-              name="settings"
-              size={30}
-              color="black"
-              style={styles.icon}
-            />
-          </View>
-        </TouchableOpacity>
-      </View>
+      <Header
+        title="Me"
+        icon={
+          <IIcon name="settings" size={30} color="black" style={styles.icon} />
+        }
+      />
     </View>
   );
 }

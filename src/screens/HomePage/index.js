@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {Text, View, TouchableOpacity, FlatList} from 'react-native';
 import FA5Icon from 'react-native-vector-icons/FontAwesome5';
 import PlatformSpecificStatusBar from '../../components/StatusBar';
 import Header from '../../components/Header';
+import MIIcon from 'react-native-vector-icons/MaterialIcons';
+import {Modalize} from 'react-native-modalize';
 import styles from './styles';
 
 const DATALIST = [
@@ -96,6 +98,13 @@ const FILTERLIST = [
 ];
 
 export default function Home() {
+  const modalizeRef = useRef(null);
+
+  const onOpen = () => {
+    modalizeRef.current?.open();
+    console.log('s');
+  };
+
   const renderFilterList = ({item}) => (
     <TouchableOpacity>
       <View style={styles.renderListStyle}>
@@ -105,8 +114,13 @@ export default function Home() {
   );
 
   const renderItem = ({item}) => (
-    <View style={styles.item}>
-      <Text style={styles.title}>{item.title}</Text>
+    <View style={styles.itemContainer}>
+      <TouchableOpacity onPress={onOpen} style={styles.itemSubContainer}>
+        <Text style={styles.title}>{item.title}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.iconContainer}>
+        <MIIcon name="delete" size={25} color="black" style={styles.icon} />
+      </TouchableOpacity>
     </View>
   );
   return (
@@ -123,6 +137,20 @@ export default function Home() {
           />
         }
       />
+      <Modalize
+        ref={modalizeRef}
+        scrollViewProps={{showsVerticalScrollIndicator: false}}
+        snapPoint={500}
+        HeaderComponent={
+          <View>
+            <Text>Header</Text>
+          </View>
+        }
+        withHandle={false}>
+        <View>
+          <Text>ss</Text>
+        </View>
+      </Modalize>
       <View style={{flex: 1}}>
         <View style={{flex: 1}}>
           <View style={{backgroundColor: 'white'}}>

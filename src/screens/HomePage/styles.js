@@ -13,12 +13,12 @@ const styles = StyleSheet.create({
   iconContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
-    width: 40,
-    height: 40,
-    borderRadius: 20,
   },
-  icon: {},
+  icon: {
+    width: 30,
+    height: 30,
+    borderRadius: 10,
+  },
   about: {
     flex: 1,
     justifyContent: 'center',
@@ -30,11 +30,13 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontWeight: '800',
   },
-  item: {
+  itemContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     backgroundColor: '#f9c2ff',
     padding: 10,
     marginVertical: 8,
-    marginHorizontal: 16,
+    marginHorizontal: 10,
     borderRadius: 10,
   },
   title: {
@@ -46,6 +48,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     borderBottomWidth: 1,
     borderBottomColor: 'green',
+  },
+  itemSubContainer: {
+    paddingVertical: 1,
+    flex: 4,
   },
 });
 
