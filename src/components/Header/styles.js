@@ -28,16 +28,14 @@ const styles = StyleSheet.create({
   subContainer: {
     position: 'absolute',
     right: 5,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   iconContainer: {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+    width: windowHeight / 15,
+    height: windowHeight / 15,
+    borderRadius: windowHeight / 30,
   },
 });
 

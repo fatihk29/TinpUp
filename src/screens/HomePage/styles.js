@@ -48,6 +48,11 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     borderBottomWidth: 1,
     borderBottomColor: 'green',
+    shadowOffset: {
+      width: 2,
+      height: 2,
+      shadowRadius: 5,
+    },
   },
   itemSubContainer: {
     paddingVertical: 1,
