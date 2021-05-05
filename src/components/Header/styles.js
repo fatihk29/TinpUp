@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignContent: 'center',
     justifyContent: 'flex-start',
-    backgroundColor: 'red',
+    backgroundColor: 'rgb(66, 164, 220)',
   },
   logoContainer: {},
   logo: {

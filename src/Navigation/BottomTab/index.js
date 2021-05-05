@@ -6,14 +6,6 @@ import FAIcon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 import HomePage from '../../screens/HomePage';
 
-function Home() {
-  return (
-    <View style={styles.home}>
-      <FAIcon name="home" size={30} color="#900" />
-    </View>
-  );
-}
-
 function Contact({navigation}) {
   return (
     <View style={styles.contact}>

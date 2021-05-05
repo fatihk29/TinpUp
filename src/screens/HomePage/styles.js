@@ -1,18 +1,24 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
+
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
-  home: {
-    flex: 1,
+  subContainer: {
+    flexDirection: 'row',
+    marginRight: 5,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    top: -windowHeight / 16,
+  },
+  iconContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#03cafc',
+    backgroundColor: 'white',
+    width: 40,
+    height: 40,
+    borderRadius: 20,
   },
-  contact: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#c203fc',
-  },
+  icon: {},
   about: {
     flex: 1,
     justifyContent: 'center',

@@ -15,7 +15,12 @@ const IosStatusBar = backgroundColor => {
 
 const PlatformSpecificStatusBar = () => {
   if (Platform.OS === 'android') {
-    return <StatusBar backgroundColor={Colors.White} barStyle="dark-content" />;
+    return (
+      <StatusBar
+        backgroundColor={Colors.StatusBarColor}
+        barStyle="dark-content"
+      />
+    );
   } else if (Platform.OS === 'ios') {
     return IosStatusBar(Colors.White);
   }
