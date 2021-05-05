@@ -99,10 +99,11 @@ const FILTERLIST = [
 
 export default function Home() {
   const modalizeRef = useRef(null);
-  const [selectedData, setSelectedData] = useState();
+  const [selectedData, setSelectedData] = useState({});
 
-  const onOpen = () => {
+  const onOpen = item => {
     modalizeRef.current?.open();
+    setSelectedData(item);
   };
 
   const renderFilterList = ({item}) => (
@@ -116,10 +117,7 @@ export default function Home() {
   const renderItem = ({item}) => (
     <View style={styles.itemContainer}>
       <TouchableOpacity
-        onPress={() => {
-          setSelectedData(item.id);
-          return onOpen(item);
-        }}
+        onPress={() => onOpen(item)}
         style={styles.itemSubContainer}>
         <Text style={styles.title}>{item.title}</Text>
       </TouchableOpacity>
@@ -148,13 +146,36 @@ export default function Home() {
         scrollViewProps={{showsVerticalScrollIndicator: false}}
         snapPoint={500}
         HeaderComponent={
-          <View>
-            <Text style={{marginLeft: 5, fontSize: 20}}>Header</Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              borderBottomWidth: 2,
+              borderBottomColor: 'gray',
+            }}>
+            <Text
+              style={{
+                marginHorizontal: 5,
+                fontSize: 20,
+              }}>
+              Edit
+            </Text>
+            <TouchableOpacity style={styles.iconContainer}>
+              <MIIcon
+                name="delete"
+                size={25}
+                color="black"
+                style={styles.icon}
+              />
+            </TouchableOpacity>
           </View>
         }
         withHandle={false}>
         <View>
-          <Text style={{marginLeft: 5, fontSize: 16}}>{selectedData}</Text>
+          <Text style={{marginLeft: 5, fontSize: 16}}>
+            {selectedData.title}
+          </Text>
+          <Text style={{marginLeft: 5, fontSize: 16}}>{selectedData.id}</Text>
         </View>
       </Modalize>
       <View style={{flex: 1}}>

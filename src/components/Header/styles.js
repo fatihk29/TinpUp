@@ -4,7 +4,6 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   header: {
-    width: '100%',
     height: windowHeight / 15,
     flexDirection: 'row',
     alignContent: 'center',
