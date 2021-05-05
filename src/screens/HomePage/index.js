@@ -137,7 +137,7 @@ export default function Home() {
           <FA5Icon
             name="user-plus"
             size={20}
-            color="black"
+            color="blue"
             style={styles.icon}
           />
         }
