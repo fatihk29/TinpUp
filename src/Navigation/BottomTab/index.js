@@ -3,17 +3,10 @@ import {Text, View, Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FAIcon from 'react-native-vector-icons/FontAwesome';
+import IIcon from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 import HomePage from '../../screens/HomePage';
-
-function Contact({navigation}) {
-  return (
-    <View style={styles.contact}>
-      <Text style={styles.text}>Service</Text>
-      <Button title="Go back" onPress={() => navigation.goBack()} />
-    </View>
-  );
-}
+import Customers from '../../screens/Customers';
 
 function About({navigation}) {
   return (
@@ -45,11 +38,11 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Service"
-        component={Contact}
+        component={Customers}
         options={{
-          tabBarLabel: 'Customer',
+          tabBarLabel: 'Customers',
           tabBarIcon: ({color, size}) => (
-            <FAIcon name="cog" size={size} color="#4B0082" />
+            <IIcon name="people" size={size} color="#4B0082" />
           ),
         }}
       />
@@ -67,7 +60,7 @@ function MyTabs() {
         name="Map"
         component={About}
         options={{
-          tabBarLabel: 'About',
+          tabBarLabel: 'Map',
           tabBarIcon: ({color, size}) => (
             <FAIcon name="map-marker" size={size} color="#4B0082" />
           ),
@@ -77,7 +70,7 @@ function MyTabs() {
         name="Customer"
         component={About}
         options={{
-          tabBarLabel: 'About',
+          tabBarLabel: 'Me',
           tabBarIcon: ({color, size}) => (
             <FAIcon name="user" size={size} color="#4B0082" />
           ),
