@@ -11,8 +11,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     backgroundColor: 'rgb(66, 164, 220)',
   },
-  logoContainer: {},
-  logo: {
+  image: {
     width: windowHeight / 15,
     height: windowHeight / 15,
   },
@@ -27,10 +26,19 @@ const styles = StyleSheet.create({
     color: '#000',
     letterSpacing: 1,
   },
-  icons: {
+  subContainer: {
     position: 'absolute',
-    left: 16,
-    top: 15,
+    right: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  iconContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    width: 40,
+    height: 40,
+    borderRadius: 20,
   },
 });
 

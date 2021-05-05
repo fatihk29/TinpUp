@@ -39,8 +39,32 @@ const DATALIST = [
     title: 'Eight',
   },
   {
-    id: '586asa0fa72',
+    id: '586as643fa72',
     title: 'Nine',
+  },
+  {
+    id: '586783a0fa72',
+    title: 'Ten',
+  },
+  {
+    id: '586a6780fa72',
+    title: 'Eleven',
+  },
+  {
+    id: '58678a0fa72',
+    title: 'Twelve',
+  },
+  {
+    id: '586678sa0fa72',
+    title: 'Thirteeen',
+  },
+  {
+    id: '586679fa72',
+    title: 'Fourteen',
+  },
+  {
+    id: '580678fa72',
+    title: 'Fifteen',
   },
 ];
 
@@ -86,35 +110,38 @@ export default function Home() {
     </View>
   );
   return (
-    <View>
+    <View style={{flex: 1}}>
       <PlatformSpecificStatusBar />
-      <Header title="Home" />
-      <View style={styles.subContainer}>
-        <TouchableOpacity>
-          <View style={styles.iconContainer}>
-            <FA5Icon
-              name="user-plus"
-              size={20}
-              color="black"
-              style={styles.icon}
+      <Header
+        title="Home"
+        icon={
+          <FA5Icon
+            name="user-plus"
+            size={20}
+            color="black"
+            style={styles.icon}
+          />
+        }
+      />
+      <View style={{flex: 1}}>
+        <View style={{flex: 1}}>
+          <View style={{backgroundColor: 'white'}}>
+            <FlatList
+              showsHorizontalScrollIndicator={false}
+              horizontal={true}
+              data={FILTERLIST}
+              renderItem={renderFilterList}
+              keyExtractor={item => item.id}
             />
           </View>
-        </TouchableOpacity>
-      </View>
-      <View style={{backgroundColor: 'white'}}>
-        <FlatList
-          horizontal={true}
-          data={FILTERLIST}
-          renderItem={renderFilterList}
-          keyExtractor={item => item.id}
-        />
-      </View>
-      <View>
-        <FlatList
-          data={DATALIST}
-          renderItem={renderItem}
-          keyExtractor={item => item.id}
-        />
+          <View style={{flex: 1}}>
+            <FlatList
+              data={DATALIST}
+              renderItem={renderItem}
+              keyExtractor={item => item.id}
+            />
+          </View>
+        </View>
       </View>
     </View>
   );
