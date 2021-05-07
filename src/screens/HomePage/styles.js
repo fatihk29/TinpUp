@@ -58,6 +58,12 @@ const styles = StyleSheet.create({
     paddingVertical: 1,
     flex: 4,
   },
+  modalizeStyle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderBottomWidth: 2,
+    borderBottomColor: 'gray',
+  },
 });
 
 export default styles;

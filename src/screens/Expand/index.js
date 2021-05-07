@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, TouchableOpacity} from 'react-native';
+import {View} from 'react-native';
 import FA5Icon from 'react-native-vector-icons/FontAwesome5';
 import PlatformSpecificStatusBar from '../../components/StatusBar';
 import Header from '../../components/Header';

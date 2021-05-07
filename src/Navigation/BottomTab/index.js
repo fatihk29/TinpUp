@@ -1,6 +1,5 @@
 import React from 'react';
 import {Text, View, Button} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FAIcon from 'react-native-vector-icons/FontAwesome';
 import IIcon from 'react-native-vector-icons/Ionicons';
@@ -14,11 +13,10 @@ function Map({navigation}) {
   return (
     <View style={styles.about}>
       <Text style={styles.text}>Under Construction</Text>
-      <Button title="Go back" onPress={() => navigation.goBack()} />
+      <Button title="<= Go back" onPress={() => navigation.goBack()} />
     </View>
   );
 }
-
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
@@ -83,9 +81,5 @@ function MyTabs() {
 }
 
 export default function TabNavigation() {
-  return (
-    <NavigationContainer independent={true}>
-      <MyTabs />
-    </NavigationContainer>
-  );
+  return <MyTabs />;
 }

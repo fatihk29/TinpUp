@@ -97,7 +97,7 @@ const FILTERLIST = [
   },
 ];
 
-export default function Home() {
+export default function Home({navigation}) {
   const modalizeRef = useRef(null);
   const [selectedData, setSelectedData] = useState({});
 
@@ -131,6 +131,7 @@ export default function Home() {
     <View style={{flex: 1}}>
       <PlatformSpecificStatusBar />
       <Header
+        navigation={navigation}
         title="Home"
         icon={
           <FA5Icon
@@ -146,13 +147,7 @@ export default function Home() {
         scrollViewProps={{showsVerticalScrollIndicator: false}}
         snapPoint={500}
         HeaderComponent={
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              borderBottomWidth: 2,
-              borderBottomColor: 'gray',
-            }}>
+          <View style={styles.modalizeStyle}>
             <Text
               style={{
                 marginHorizontal: 5,
