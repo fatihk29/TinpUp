@@ -138,7 +138,7 @@ export default function Home({navigation, route}) {
   );
 
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 11}}>
       <PlatformSpecificStatusBar />
       <Header
         navigation={navigation}
