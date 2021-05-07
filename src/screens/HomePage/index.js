@@ -97,7 +97,7 @@ const FILTERLIST = [
   },
 ];
 
-export default function Home({navigation}) {
+export default function Home({navigation, route}) {
   const modalizeRef = useRef(null);
   const [selectedData, setSelectedData] = useState({});
 
@@ -105,6 +105,14 @@ export default function Home({navigation}) {
     modalizeRef.current?.open();
     setSelectedData(item);
   };
+
+  React.useEffect(() => {
+    console.log('110', route.params?.post);
+    if (route.params?.post) {
+      // Post updated, do something with `route.params.post`
+      // For example, send the post to the server
+    }
+  }, [route.params?.post]);
 
   const renderFilterList = ({item}) => (
     <TouchableOpacity>
@@ -121,7 +129,9 @@ export default function Home({navigation}) {
         style={styles.itemSubContainer}>
         <Text style={styles.title}>{item.title}</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.iconContainer}>
+      <TouchableOpacity
+        style={styles.iconContainer}
+        onPress={() => console.log(route)}>
         <MIIcon name="delete" size={25} color="black" style={styles.icon} />
       </TouchableOpacity>
     </View>
@@ -130,6 +140,7 @@ export default function Home({navigation}) {
   return (
     <View style={{flex: 1}}>
       <PlatformSpecificStatusBar />
+      <Text style={{margin: 10}}>Post: {route.params}</Text>
       <Header
         navigation={navigation}
         title="Home"
