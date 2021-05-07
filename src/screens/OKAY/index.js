@@ -14,7 +14,7 @@ import Header from '../../components/Header';
 import FA5Icon from 'react-native-vector-icons/FontAwesome';
 import MCIIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const Okay = ({navigation}) => {
+const Okay = ({navigation, route}) => {
   const [courseGoals, setCourseGoals] = useState([]);
   const [enteredGoal, setEnteredGoal] = useState('');
   const goalInputHandler = enteredText => {
@@ -30,7 +30,6 @@ const Okay = ({navigation}) => {
 
   const removeGoalHandler = goalId => {
     setCourseGoals(currentGoals => {
-      console.log(goalId);
       return currentGoals.filter(goal => goal.key !== goalId);
     });
   };
@@ -44,14 +43,16 @@ const Okay = ({navigation}) => {
       />
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate({
-            name: 'Home',
-            params: {post: 'asdasdasd'},
+          // Pass and merge params back to home screen
+          navigation.navigate('Oktyy', {
+            params: 'asdddddddddddddd',
             merge: true,
           });
         }}>
         <MCIIcon name="hand-okay" size={30} />
       </TouchableOpacity>
+      <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
+
       <Button title="Add" onPress={addGoalHandler.bind(this, enteredGoal)} />
       <View>
         <SafeAreaView>

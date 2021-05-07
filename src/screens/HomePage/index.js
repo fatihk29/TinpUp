@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import {Text, View, TouchableOpacity, FlatList} from 'react-native';
+import {Text, View, TouchableOpacity, FlatList, Button} from 'react-native';
 import FA5Icon from 'react-native-vector-icons/FontAwesome5';
 import PlatformSpecificStatusBar from '../../components/StatusBar';
 import Header from '../../components/Header';
@@ -100,6 +100,7 @@ const FILTERLIST = [
 export default function Home({navigation, route}) {
   const modalizeRef = useRef(null);
   const [selectedData, setSelectedData] = useState({});
+  const [showData, setShowData] = useState();
 
   const onOpen = item => {
     modalizeRef.current?.open();
@@ -107,12 +108,11 @@ export default function Home({navigation, route}) {
   };
 
   React.useEffect(() => {
-    console.log('110', route.params?.post);
-    if (route.params?.post) {
-      // Post updated, do something with `route.params.post`
-      // For example, send the post to the server
+    console.log('110', route);
+    setShowData(route.params);
+    if (route.params) {
     }
-  }, [route.params?.post]);
+  }, [route.params]);
 
   const renderFilterList = ({item}) => (
     <TouchableOpacity>
@@ -140,7 +140,6 @@ export default function Home({navigation, route}) {
   return (
     <View style={{flex: 1}}>
       <PlatformSpecificStatusBar />
-      <Text style={{margin: 10}}>Post: {route.params}</Text>
       <Header
         navigation={navigation}
         title="Home"
