@@ -56,26 +56,6 @@ function MyTabs() {
           ),
         }}
       />
-      <Tab.Screen
-        name="Map"
-        component={Map}
-        options={{
-          tabBarLabel: 'Map',
-          tabBarIcon: ({color, size}) => (
-            <FAIcon name="map-marker" size={size} color="#4B0082" />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Customer"
-        component={MyProfile}
-        options={{
-          tabBarLabel: 'Me',
-          tabBarIcon: ({color, size}) => (
-            <FAIcon name="user" size={size} color="#4B0082" />
-          ),
-        }}
-      />
     </Tab.Navigator>
   );
 }
